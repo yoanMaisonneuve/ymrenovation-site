@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YM Rénovation — Rénovation résidentielle à Laval, Montréal et Basses-Laurentides</title>
+<meta name="description" content="Rénovation résidentielle soignée : toiture, portes et fenêtres, maçonnerie, salles de bain, cuisines et finition intérieure. Soumission écrite détaillée. Laval, Montréal, Basses-Laurentides.">
+<link rel="canonical" href="https://www.ymrenovation.ca/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:title" content="YM Rénovation — Rénovation résidentielle">
+<meta property="og:description" content="Rénovation intérieure et finitions professionnelles. Soumission écrite détaillée, travail propre, délais respectés.">
+<meta property="og:url" content="https://www.ymrenovation.ca/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Lora:wght@400..600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------------------------------------------------------------
+     YM Rénovation — feuille unique, aucun build, aucune dépendance.
+     Palette : le marine et le doré viennent des soumissions et des
+     factures (style/ym-renovations-style.css) pour que le site et les
+     documents clients soient le même système. Le sable et l'acier
+     viennent de la direction créative de branding.md.
+     --------------------------------------------------------------- */
+  :root {
+    --navy: #0b1f3a;
+    --navy-2: #13294d;
+    --navy-3: #1c3a64;
+    --gold: #d4a843;
+    --gold-text: #a8841f;
+    --ink: #1a1a1a;
+    --ink-body: #2a2620;
+    --dim: #5c5c5c;
+    --soft: #8a8a8a;
+    --line: #e4e2dd;
+    --paper: #ffffff;
+    --sand: #f6f4f0;
+    --steel: #eceef1;
+    --display: 'Newsreader', Georgia, serif;
+    --body: 'Lora', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --pad: clamp(20px, 5vw, 64px);
+    --maxw: 1180px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink-body);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
+
+  /* ---------- Barre de navigation ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 14px; }
+  .logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
+  .logo .mark {
+    font-family: var(--display); font-weight: 600; font-size: 17px;
+    border: 1.5px solid currentColor; width: 42px; height: 42px;
+    display: inline-flex; align-items: center; justify-content: center;
+    letter-spacing: 0.02em; flex-shrink: 0;
+  }
+  .logo .word { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; line-height: 1.3; }
+  .logo .word .sub { display: block; font-size: 8px; letter-spacing: 0.16em; color: var(--gold-text); margin-top: 3px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--dim); transition: color .15s; }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-tel { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--navy) !important; letter-spacing: 0.04em !important; text-transform: none !important; }
+  @media (max-width: 860px) { .nav-links a:not(.nav-tel) { display: none; } }
+
+  /* ---------- Boutons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    padding: 14px 26px; border: 1.5px solid var(--navy);
+    transition: background .18s, color .18s, transform .18s;
+  }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-3); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--navy); }
+  .btn-ghost:hover { background: var(--navy); color: #fff; }
+  .btn-light { border-color: rgba(255,255,255,0.55); color: #fff; background: transparent; }
+  .btn-light:hover { background: #fff; color: var(--navy); border-color: #fff; }
+
+  /* ---------- Héros ---------- */
+  .hero {
+    background: linear-gradient(135deg, #0b1f3a 0%, #13294d 48%, #1c3a64 100%);
+    color: #fff; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; top: -30%; right: -8%;
+    width: min(620px, 70vw); height: min(620px, 70vw);
+    background: radial-gradient(circle, rgba(212,168,67,0.20) 0%, transparent 68%);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 1; padding-block: clamp(64px, 11vw, 122px); }
+  .eyebrow {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(38px, 6.2vw, 68px); line-height: 1.04;
+    letter-spacing: -0.022em; max-width: 15ch; margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero .lede {
+    font-size: clamp(16px, 2vw, 19px); line-height: 1.6;
+    color: #cdd8e8; max-width: 56ch; margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .accent-strip { height: 4px; background: linear-gradient(90deg, var(--gold) 0 28%, var(--navy) 28% 100%); }
+
+  /* ---------- Bandeau de confiance ---------- */
+  .trust { background: var(--sand); border-bottom: 1px solid var(--line); }
+  .trust .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; padding-block: 30px; }
+  .trust .t { display: flex; flex-direction: column; gap: 5px; }
+  .trust .t b { font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--navy); line-height: 1.2; }
+  .trust .t span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); line-height: 1.5; }
+
+  /* ---------- Sections ---------- */
+  section { scroll-margin-top: 78px; }
+  .band { padding-block: clamp(56px, 9vw, 100px); }
+  .band.alt { background: var(--sand); }
+  .band.steel { background: var(--steel); }
+  .shead { margin-bottom: 44px; max-width: 62ch; }
+  .shead .kicker {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold-text); font-weight: 600;
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+  }
+  .shead .kicker::after { content: ''; flex: 1; height: 1px; background: var(--line); max-width: 90px; }
+  .shead h2 {
+    font-family: var(--display); font-weight: 600;
+    font-size: clamp(28px, 4.2vw, 42px); line-height: 1.12;
+    letter-spacing: -0.018em; color: var(--navy); margin-bottom: 14px;
+  }
+  .shead h2 em { font-style: italic; color: var(--gold-text); }
+  .shead p { font-size: 16.5px; color: var(--dim); }
+
+  /* ---------- Services ---------- */
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .svc { background: var(--paper); padding: 30px 28px; display: flex; flex-direction: column; gap: 10px; transition: background .18s; }
+  .svc:hover { background: var(--sand); }
+  .svc .n { font-family: var(--mono); font-size: 10px; color: var(--gold-text); letter-spacing: 0.12em; font-weight: 600; }
+  .svc h3 { font-family: var(--display); font-size: 21px; font-weight: 600; color: var(--navy); line-height: 1.2; }
+  .svc p { font-size: 14.5px; color: var(--dim); line-height: 1.6; }
+  .svc ul { list-style: none; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .svc ul li { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft); border: 1px solid var(--line); padding: 3px 8px; }
+
+  /* ---------- Processus ---------- */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 30px; }
+  .step { border-top: 2px solid var(--navy); padding-top: 18px; }
+  .step .num { font-family: var(--display); font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+  .step h3 { font-family: var(--display); font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 8px; line-height: 1.25; }
+  .step p { font-size: 14.5px; color: var(--dim); line-height: 1.6; }
+
+  /* ---------- Réalisations ---------- */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
+  .proj { background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .proj .ph {
+    aspect-ratio: 4 / 3; background: var(--steel);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--soft); text-align: center; padding: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .proj .body { padding: 22px 24px 26px; }
+  .proj .loc { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 8px; font-weight: 600; }
+  .proj h3 { font-family: var(--display); font-size: 20px; font-weight: 600; color: var(--navy); line-height: 1.22; margin-bottom: 8px; }
+  .proj p { font-size: 14.5px; color: var(--dim); line-height: 1.6; }
+
+  /* ---------- Citation client ---------- */
+  .quote { border-left: 4px solid var(--gold); padding: 26px 30px; background: var(--paper); max-width: 74ch; }
+  .quote blockquote { font-family: var(--display); font-style: italic; font-size: clamp(18px, 2.4vw, 23px); line-height: 1.45; color: var(--navy); margin-bottom: 14px; }
+  .quote cite { font-family: var(--mono); font-style: normal; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
+
+  /* ---------- Zone desservie ---------- */
+  .zone { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .zone span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--navy); border: 1px solid var(--line); background: var(--paper); padding: 8px 14px; }
+
+  /* ---------- Contact ---------- */
+  .contact { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+  .contact::after {
+    content: ''; position: absolute; bottom: -40%; left: -6%;
+    width: min(560px, 70vw); height: min(560px, 70vw);
+    background: radial-gradient(circle, rgba(212,168,67,0.16) 0%, transparent 68%);
+    pointer-events: none;
+  }
+  .contact .wrap { position: relative; z-index: 1; padding-block: clamp(56px, 9vw, 96px); }
+  .contact h2 { font-family: var(--display); font-size: clamp(28px, 4.4vw, 44px); font-weight: 600; line-height: 1.1; letter-spacing: -0.018em; margin-bottom: 16px; max-width: 18ch; }
+  .contact h2 em { font-style: italic; color: var(--gold); }
+  .contact .lede { color: #cdd8e8; max-width: 54ch; margin-bottom: 34px; font-size: 16.5px; }
+  .coords { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 26px; margin-bottom: 34px; }
+  .coords .c { border-top: 1px solid rgba(255,255,255,0.25); padding-top: 14px; }
+  .coords .c .k { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #9bb3d4; margin-bottom: 7px; }
+  .coords .c .v { font-family: var(--display); font-size: 19px; font-weight: 600; }
+  .coords .c .v a { text-decoration: none; border-bottom: 1px solid rgba(212,168,67,0.6); padding-bottom: 2px; }
+  .coords .c .v a:hover { color: var(--gold); }
+
+  /* ---------- Pied de page ---------- */
+  .foot { background: #071426; color: #8fa3bd; padding-block: 34px; font-size: 13px; }
+  .foot .wrap { display: flex; flex-wrap: wrap; gap: 22px; justify-content: space-between; align-items: center; }
+  .foot .logo { color: #fff; }
+  .foot .logo .word .sub { color: var(--gold); }
+  .foot .legal { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.9; text-align: right; }
+  .foot .legal .lic { color: var(--gold); }
+  @media (max-width: 640px) { .foot .legal { text-align: left; } }
+</style>
+</head>
+<body>
+
+<!-- ======================= NAVIGATION ======================= -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="YM Rénovation, accueil">
+      <span class="mark">YM</span>
+      <span class="word">YM Rénovation<span class="sub">Rénovation résidentielle</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#processus">Comment ça se passe</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#zone">Zone desservie</a>
+      <a class="nav-tel" href="tel:+15149268633">514 926-8633</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================= HÉROS ======================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Laval · Montréal · Basses-Laurentides</div>
+    <h1>Une rénovation faite pour <em>durer</em>.</h1>
+    <p class="lede">
+      Toiture, portes et fenêtres, maçonnerie, salles de bain, cuisines et finition intérieure.
+      Chaque projet part d'une soumission écrite détaillée, poste par poste, pour que vous
+      sachiez exactement ce que vous payez avant que le premier outil sorte du camion.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Demander une soumission</a>
+      <a class="btn btn-light" href="#realisations">Voir les réalisations</a>
+    </div>
+  </div>
+</section>
+<div class="accent-strip"></div>
+
+<!-- ======================= BANDEAU DE CONFIANCE ======================= -->
+<div class="trust">
+  <div class="wrap">
+    <div class="t"><b>Soumission écrite</b><span>Détaillée poste par poste, avec les exclusions nommées</span></div>
+    <div class="t"><b>Prix ferme</b><span>Forfait tout compris — matériaux, main-d'œuvre, disposition</span></div>
+    <div class="t"><b>Chantier propre</b><span>Débris ramassés, site rendu comme on l'a trouvé</span></div>
+    <div class="t"><b>Garantie écrite</b><span>Sur la main-d'œuvre, en plus des garanties des fabricants</span></div>
+  </div>
+</div>
+
+<!-- ======================= SERVICES ======================= -->
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="shead">
+      <div class="kicker">Services</div>
+      <h2>Ce qu'on <em>exécute</em></h2>
+      <p>De l'extérieur qui protège la maison jusqu'à la finition qu'on voit tous les jours. Un seul interlocuteur du début à la fin du chantier.</p>
+    </div>
+
+    <div class="services">
+      <article class="svc">
+        <div class="n">01</div>
+        <h3>Toiture et enveloppe</h3>
+        <p>Arrachage jusqu'au pontage, inspection du contreplaqué à nu, bardeau d'asphalte posé selon les spécifications du fabricant, soffites ventilés et fourrures d'ancrage.</p>
+        <ul><li>Bardeau</li><li>Soffites</li><li>Ventilation</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="n">02</div>
+        <h3>Portes et fenêtres</h3>
+        <p>Remplacement de fenêtres et de thermos, portes-patio, agrandissement d'ouverture, calfeutrage de finition et reprise des allèges.</p>
+        <ul><li>Fenêtres</li><li>Thermos</li><li>Porte-patio</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="n">03</div>
+        <h3>Maçonnerie et ouvertures</h3>
+        <p>Ouverture dans un mur de brique, pose de fer d'angle et de linteau, membrane conforme, allèges, rejointement de fissures et reprise de soldats.</p>
+        <ul><li>Brique</li><li>Linteau</li><li>Rejointement</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="n">04</div>
+        <h3>Salles de bain</h3>
+        <p>Rénovation complète, de la démolition à la finition : membrane, céramique, plomberie coordonnée, ventilation et pose des accessoires.</p>
+        <ul><li>Céramique</li><li>Étanchéité</li><li>Finition</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="n">05</div>
+        <h3>Cuisines</h3>
+        <p>Réaménagement, armoires, comptoirs, dosseret et raccords. On coordonne les corps de métier pour que la séquence tienne et que la cuisine revienne vite en service.</p>
+        <ul><li>Armoires</li><li>Comptoirs</li><li>Dosseret</li></ul>
+      </article>
+
+      <article class="svc">
+        <div class="n">06</div>
+        <h3>Finition intérieure</h3>
+        <p>Gypse, joints, moulures, portes, planchers et peinture. C'est la partie que vous regardez tous les jours : c'est celle qu'on soigne le plus.</p>
+        <ul><li>Gypse</li><li>Moulures</li><li>Planchers</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROCESSUS ======================= -->
+<section class="band alt" id="processus">
+  <div class="wrap">
+    <div class="shead">
+      <div class="kicker">Comment ça se passe</div>
+      <h2>Quatre étapes, <em>zéro surprise</em></h2>
+      <p>La plupart des mauvaises expériences de rénovation viennent d'un flou au départ. On enlève le flou avant de commencer.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Visite et relevé</h3>
+        <p>On se déplace, on mesure, on regarde ce qui se cache derrière. On nomme les inconnues au lieu de les découvrir en cours de route.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Soumission écrite</h3>
+        <p>Un document détaillé : les travaux poste par poste, ce qui est inclus, ce qui est exclu, le prix ferme et l'échéancier. Vous décidez avec toute l'information.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Exécution</h3>
+        <p>Un chantier tenu propre, des versements liés à l'avancement réel des travaux, et tout changement confirmé par écrit avant d'être exécuté.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Réception</h3>
+        <p>On fait le tour ensemble, on règle la liste de déficiences, et la garantie sur la main-d'œuvre est écrite au contrat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= RÉALISATIONS ======================= -->
+<section class="band" id="realisations">
+  <div class="wrap">
+    <div class="shead">
+      <div class="kicker">Réalisations</div>
+      <h2>Des chantiers <em>terminés</em></h2>
+      <p>Des projets réels, livrés et payés. Les photos avant et après sont ajoutées au fur et à mesure.</p>
+    </div>
+
+    <div class="projects">
+      <article class="proj">
+        <!-- Remplacer par : <img src="assets/toiture-cabanon-apres.jpg" alt="Toiture de cabanon refaite en bardeau noir"> -->
+        <div class="ph">Photo à ajouter<br>toiture — avant / après</div>
+        <div class="body">
+          <div class="loc">Laval</div>
+          <h3>Toiture de cabanon et soffites</h3>
+          <p>Vieux bardeau arraché jusqu'au pontage, toiture neuve en bardeau d'asphalte noir, soffites ventilés refaits sur les quatre côtés et fourrures d'ancrage pour refermer l'entretoit contre les écureuils.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <!-- Remplacer par : <img src="assets/ouverture-brique-apres.jpg" alt="Agrandissement d une ouverture de fenêtre en brique"> -->
+        <div class="ph">Photo à ajouter<br>ouverture de brique — avant / après</div>
+        <div class="body">
+          <div class="loc">Lorraine</div>
+          <h3>Agrandissement d'une fenêtre de cuisine</h3>
+          <p>Ouverture de brique élargie à 80 pouces, fer d'angle en acier peint et membrane conforme, diamant recentré, soldat refait, allèges à face éclatée arrondie et poutre structurale posée selon le plan d'ingénieur.</p>
+        </div>
+      </article>
+
+      <article class="proj">
+        <!-- Remplacer par : <img src="assets/fenetres-apres.jpg" alt="Fenêtres et porte-patio remplacées"> -->
+        <div class="ph">Photo à ajouter<br>fenêtres — avant / après</div>
+        <div class="body">
+          <div class="loc">Saint-Eustache</div>
+          <h3>Fenêtres et porte-patio</h3>
+          <p>Relevé complet, mise en concurrence de plusieurs fabricants avec et sans verre à faible émissivité, puis remplacement des unités et calfeutrage de finition.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="quote" style="margin-top: 40px;">
+      <blockquote>Je suis tellement contente de ne plus avoir de visiteurs à l'intérieur. Merci encore, tu travailles vraiment bien.</blockquote>
+      <cite>Renée — toiture de cabanon et soffites, Laval</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ZONE DESSERVIE ======================= -->
+<section class="band steel" id="zone">
+  <div class="wrap">
+    <div class="shead">
+      <div class="kicker">Zone desservie</div>
+      <h2>Où on <em>travaille</em></h2>
+      <p>Un rayon volontairement serré, pour être sur le chantier tôt le matin et rester disponible après la livraison.</p>
+    </div>
+    <div class="zone">
+      <span>Laval</span><span>Montréal</span><span>Saint-Eustache</span><span>Lorraine</span>
+      <span>Boisbriand</span><span>Sainte-Thérèse</span><span>Rosemère</span><span>Blainville</span>
+      <span>Deux-Montagnes</span><span>Mirabel</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Parlons de votre <em>projet</em>.</h2>
+    <p class="lede">Décrivez ce que vous voulez faire. On se déplace, on regarde, et vous recevez une soumission écrite détaillée — sans frais et sans engagement.</p>
+
+    <div class="coords">
+      <div class="c">
+        <div class="k">Téléphone</div>
+        <div class="v"><a href="tel:+15149268633">514 926-8633</a></div>
+      </div>
+      <div class="c">
+        <div class="k">Courriel</div>
+        <div class="v"><a href="mailto:yoan@ymrenovation.ca">yoan@ymrenovation.ca</a></div>
+      </div>
+      <div class="c">
+        <div class="k">Délai de réponse</div>
+        <div class="v">Sous 24 heures</div>
+      </div>
+    </div>
+
+    <a class="btn btn-light" href="mailto:yoan@ymrenovation.ca?subject=Demande%20de%20soumission&amp;body=Bonjour%20Yoan%2C%0A%0AProjet%20%3A%20%0AAdresse%20%3A%20%0AD%C3%A9lai%20souhait%C3%A9%20%3A%20%0AT%C3%A9l%C3%A9phone%20%3A%20%0A%0AMerci.">Demander une soumission</a>
+  </div>
+</section>
+
+<!-- ======================= PIED DE PAGE ======================= -->
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <span class="mark">YM</span>
+      <span class="word">YM Rénovation<span class="sub">Rénovation résidentielle</span></span>
+    </a>
+    <div class="legal">
+      <!-- OBLIGATOIRE une fois la licence obtenue : le numéro RBQ doit figurer sur
+           toute publicité, estimation, soumission, contrat et état de compte.
+           Remplacer la ligne ci-dessous par le vrai numéro AVANT la mise en ligne. -->
+      <span class="lic">RBQ à venir</span><br>
+      514 926-8633 · yoan@ymrenovation.ca<br>
+      &copy; 2026 YM Rénovation · Laval, Québec
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
